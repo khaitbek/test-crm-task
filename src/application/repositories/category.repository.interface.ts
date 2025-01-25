@@ -1,5 +1,5 @@
-import type { ICategory } from "@/src/entities/category.model";
+import type { IGetAllCategoriesResponse } from "@/src/presentation/dtos/category.dto";
 
 export interface ICategoryRepository {
-  getAll(): Promise<ICategory[]>;
+  getAll(): Promise<IGetAllCategoriesResponse>;
 }
