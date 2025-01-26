@@ -5,6 +5,7 @@ import { Toaster } from "@/components/sonner";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ReactQueryProvider } from "./_providers/query";
+import { CartQuantity } from "./_widgets/cart-quantity";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -38,6 +39,9 @@ export default function RootLayout({
             <AppSidebar />
             <main className="p-6">
               <SidebarTrigger className="mb-6" />
+              <div className="flex justify-end">
+                <CartQuantity />
+              </div>
               {children}
             </main>
           </SidebarProvider>
