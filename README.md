@@ -2,17 +2,20 @@
 
 ### Product
 
-- [ ] Create a product
-- [ ] Edit product
-- [ ] Delete a product
+- [x] Grid view
+- [x] Table view
+- [x] Create a product
+- [x] Edit product
+- [x] Delete a product
 
 ### Category
 
+- [x] Table view
 - [ ] Create a category
 - [ ] Edit a category
 - [ ] Delete a category
 
 ### Cart
 
-- [ ] Add a product
-- [ ] Remove a product
+- [x] Add a product
+- [x] Remove a product

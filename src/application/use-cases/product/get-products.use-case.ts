@@ -4,8 +4,12 @@ type Ctx = {
   productRepository: IProductRepository;
 };
 
+export type IGetAllProductsUseCase = typeof getProductsUseCase;
+
 export async function getProductsUseCase(ctx: Ctx) {
   const { productRepository } = ctx;
 
-  return await productRepository.getAll();
+  const data = await productRepository.getAll();
+
+  return data;
 }

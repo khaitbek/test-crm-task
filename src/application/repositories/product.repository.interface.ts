@@ -1,5 +1,7 @@
 import type { IProduct } from "@/src/entities/product.model";
 import type {
+  IAddNewProductRequestData,
+  IAddNewProductResponse,
   IDeleteProductByIdResponse,
   IGetAllProductsResponse,
   IGetProductByIdResponse,
@@ -15,4 +17,5 @@ export interface IProductRepository {
     updatedFields: IUpdateProductByIdRequestData
   ): Promise<IUpdateProductByIdResponse>;
   deleteById(id: IProduct["id"]): Promise<IDeleteProductByIdResponse>;
+  addNew(product: IAddNewProductRequestData): Promise<IAddNewProductResponse>;
 }

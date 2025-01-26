@@ -3,6 +3,8 @@ import axios from "axios";
 import type { IProductRepository } from "@/src/application/repositories/product.repository.interface";
 import type { IProduct } from "@/src/entities/product.model";
 import type {
+  IAddNewProductRequestData,
+  IAddNewProductResponse,
   IDeleteProductByIdResponse,
   IGetAllProductsResponse,
   IGetProductByIdResponse,
@@ -35,6 +37,17 @@ export class ProductRepository implements IProductRepository {
 
   async deleteById(id: IProduct["id"]): Promise<IDeleteProductByIdResponse> {
     const response = await axios.delete(`https://dummyjson.com/products/${id}`);
+
+    return response.data;
+  }
+
+  async addNew(
+    product: IAddNewProductRequestData
+  ): Promise<IAddNewProductResponse> {
+    const response = await axios.post(
+      "https://dummyjson.com/products/add",
+      product
+    );
 
     return response.data;
   }

@@ -9,7 +9,7 @@ export type IGetAllProductsResponse = {
 
 export type IGetProductByIdResponse = IProductDto;
 
-export type IAddNewProductRequestData = IProductDto;
+export type IAddNewProductRequestData = Partial<IProductDto>;
 export type IAddNewProductResponse = IProductDto;
 
 export type IUpdateProductByIdRequestData = Partial<Omit<IProductDto, "id">>;

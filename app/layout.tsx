@@ -1,5 +1,10 @@
+import { AppSidebar } from "@/app/_widgets/app-sidebar";
+import { SidebarProvider, SidebarTrigger } from "@/components/sidebar";
+
+import { Toaster } from "@/components/sonner";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ReactQueryProvider } from "./_providers/query";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -28,7 +33,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ReactQueryProvider>
+          <SidebarProvider>
+            <AppSidebar />
+            <main className="p-6">
+              <SidebarTrigger className="mb-6" />
+              {children}
+            </main>
+          </SidebarProvider>
+          <Toaster />
+        </ReactQueryProvider>
       </body>
     </html>
   );
